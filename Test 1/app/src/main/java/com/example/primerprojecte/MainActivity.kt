@@ -33,12 +33,26 @@ class MainActivity : AppCompatActivity() {
                  return "Calent"
 
          }
+            println("La sensacio a 3 Graus és: ${Sensaciotermica(3)}")
+            println("La sensacio a 20 Graus és: ${Sensaciotermica(20)}")
+            println("La sensacio a 30 Graus és: ${Sensaciotermica(30)}")
 
-            fun main() {
-                println("A 3 Graus és: ${Sensaciotermica(temp=3)}")
-                println("A 20 Graus és: ${Sensaciotermica(temp=20)}")
-                println("A 30 Graus és: ${Sensaciotermica(temp=30)}")
-            }
+            //3- Feu una funció que retorni l'arrel quadrada d'un número passat per paràmetre.
+
+                fun Arrel(num: Int): Int {
+                    var i = 1
+                    while (i * i <= num) {
+                        i++
+                    }
+                    return i-1
+                }
+                    println("Arrel  de 12 és: ${Arrel(12)}")
+                    println("Arrel  de 20 és: ${Arrel(20)}")
+                    println("Arrel  de 30 és: ${Arrel(30)}")
+
+
+
+
 
 
     }
