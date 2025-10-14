@@ -102,17 +102,21 @@ I a dins poso els botons amb el Designer. Llavors em sortien un a sobre l'altre
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/layoutContrasenya"
         >
-
+<!--Als botons els hiposo amplada a 0 i he hagut de posar minHeight i layout_weight perque es mostresin-->
         <RadioButton
             android:id="@+id/radioButton3"
-            android:layout_width="match_parent"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:minHeight="48dp"
             android:text="RadioButton" />
 
         <RadioButton
             android:id="@+id/radioButton4"
-            android:layout_width="match_parent"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:minHeight="48dp"
             android:text="RadioButton" />
     </RadioGroup>
 
