@@ -7,13 +7,66 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
+    <!-- Ho he posat primer amb el designer i després he retocat amb lapestanya de attributes que està al costat
+     i , he arrastrat els punts per fixar els marges amb les boletes blaves del quadre i finalment he afegit algo de codi per els margins (la major part d'aquest codi
+      l'ha fet el programa automaticament-->
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/layoutNom"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginHorizontal="24dp"
+        android:layout_marginTop="24dp"
+        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/etNom"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Nom"
+            android:inputType="textPersonName" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/layoutCognom"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="24dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintTop_toBottomOf="@id/layoutNom"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/etCognom"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Cognom"
+            android:inputType="textPersonName" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <!-- Aqui és un text normal, pero al MainActivity li posem una funcio que agafarà aquest nom i
+     farà que quan cliquem executi el DatePickerDialog que mostrarà un calendari i escriurà la data en aquest textInput -->
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/layoutNaixement"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="24dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintTop_toBottomOf="@id/layoutCognom"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/etNaixement"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Data de naixement"
+            android:focusable="false"
+            android:inputType="none"
+            android:drawableEnd="@android:drawable/ic_menu_my_calendar"
+            android:drawablePadding="8dp" />
+    </com.google.android.material.textfield.TextInputLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
