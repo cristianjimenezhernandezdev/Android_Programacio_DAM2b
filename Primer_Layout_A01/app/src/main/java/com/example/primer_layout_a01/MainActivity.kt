@@ -8,7 +8,6 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.google.android.material.textfield.TextInputEditText
 import java.util.Calendar
-import com.example.primer_layout_a01.R
 
 //He afegit imports perque funcioni el DatePickerDialog i el TextInputEditText. juntament
 class MainActivity : AppCompatActivity() {

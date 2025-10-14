@@ -68,5 +68,27 @@
             android:drawableEnd="@android:drawable/ic_menu_my_calendar"
             android:drawablePadding="8dp" />
     </com.google.android.material.textfield.TextInputLayout>
+    <!--Per posar la contrasenya, poso un texfield i vaig a attributes
+    a inputType poso el textPassword. Llavors dins del TextInputLayout a la vista Design vaig ala atributs i busco
+    endIconMode i li poso password_toggle-->
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/layoutContrasenya"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="24dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintTop_toBottomOf="@id/layoutNaixement"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:endIconMode="password_toggle">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/etContrasenya"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Contrasenya"
+            android:inputType="textPassword" />
+    </com.google.android.material.textfield.TextInputLayout>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
