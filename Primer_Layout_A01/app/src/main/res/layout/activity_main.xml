@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <!-- Ho he posat primer amb el designer i després he retocat amb lapestanya de attributes que està al costat
+    <!-- Ho he posat primer amb el designer i després he retocat amb la pestanya de attributes que està al costat
      i , he arrastrat els punts per fixar els marges amb les boletes blaves del quadre i finalment he afegit algo de codi per els margins (la major part d'aquest codi
       l'ha fet el programa automaticament-->
     <com.google.android.material.textfield.TextInputLayout
@@ -89,6 +89,32 @@
             android:hint="Contrasenya"
             android:inputType="textPassword" />
     </com.google.android.material.textfield.TextInputLayout>
+<!--Afegeixo un radio Group que és una especie de caixa on posar botons
+I a dins poso els botons amb el Designer. Llavors em sortien un a sobre l'altre
+ vaig a atributes, busco orientation, selecciono Horitzontal i així ja es posa aliniat i no un sobre l'altre
+ Poso el layout_with a 0 perque així els botons els puc posar que agafin a la mida automatica amb el wrap
+ i no es superposin un a sobre de l'altre-->
+    <RadioGroup
+        android:layout_width="0dp"
+        android:layout_height="40dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/layoutContrasenya"
+        >
+
+        <RadioButton
+            android:id="@+id/radioButton3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="RadioButton" />
+
+        <RadioButton
+            android:id="@+id/radioButton4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="RadioButton" />
+    </RadioGroup>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
