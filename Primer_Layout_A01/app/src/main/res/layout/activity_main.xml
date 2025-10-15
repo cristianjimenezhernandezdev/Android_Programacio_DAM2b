@@ -95,6 +95,7 @@ I a dins poso els botons amb el Designer. Llavors em sortien un a sobre l'altre
  Poso el layout_with a 0 perque així els botons els puc posar que agafin a la mida automatica amb el wrap
  i no es superposin un a sobre de l'altre-->
     <RadioGroup
+        android:id="@+id/rgSexe"
         android:layout_width="0dp"
         android:layout_height="40dp"
         android:orientation="horizontal"
@@ -119,6 +120,20 @@ I a dins poso els botons amb el Designer. Llavors em sortien un a sobre l'altre
             android:minHeight="48dp"
             android:text="RadioButton" />
     </RadioGroup>
+    <!--Posem un boto switch que esta a la palette de la vista diseny i llavora amb la part de attributes marco la opcio
+    de checked false per posar que per defecte no surti actiu llavors amb el mateix codi puc ajustar les posicions en per
+    fer-ho més precis-->
+    <Switch
+        android:id="@+id/switchNotificacions"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Estoy de acuerdo con los Terminos y condiciones de Campalans2025 Classe de Ruben"
+        android:checked="false"
+        android:layout_marginTop="24dp"
+        app:layout_constraintTop_toBottomOf="@+id/rgSexe"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
