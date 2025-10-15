@@ -8,6 +8,10 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.google.android.material.textfield.TextInputEditText
 import java.util.Calendar
+import android.view.View
+import android.widget.Toast
+
+
 
 //He afegit imports perque funcioni el DatePickerDialog i el TextInputEditText. juntament
 class MainActivity : AppCompatActivity() {
@@ -46,4 +50,18 @@ class MainActivity : AppCompatActivity() {
             dialog.show()
         }
     }
+    //Per fer que funcionin les funcions he afegit dos imports, el de View i el de Toast i la resta de codi de les funcions amb el chat
+    //el d'enviar Form com que no tenim base de dades doncs no l'enviem, i el de netejar el que fem és repetir la funcio de sistema
+    //Clear per cada TextInputEdit, és a dir camps que hem creat i ens permeten escriure.
+    fun enviarForm(view: View) {
+        Toast.makeText(this, "Formulari enviat correctament!", Toast.LENGTH_SHORT).show()
+    }
+
+    fun netejarForm(view: View) {
+        findViewById<TextInputEditText>(R.id.etNom).text?.clear()
+        findViewById<TextInputEditText>(R.id.etCognom).text?.clear()
+        findViewById<TextInputEditText>(R.id.etNaixement).text?.clear()
+        findViewById<TextInputEditText>(R.id.etContrasenya).text?.clear()
+    }
+
 }

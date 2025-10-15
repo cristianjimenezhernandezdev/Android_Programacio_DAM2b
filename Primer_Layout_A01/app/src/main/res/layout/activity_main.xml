@@ -110,7 +110,7 @@ I a dins poso els botons amb el Designer. Llavors em sortien un a sobre l'altre
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:minHeight="48dp"
-            android:text="RadioButton" />
+            android:text="Home" />
 
         <RadioButton
             android:id="@+id/radioButton4"
@@ -118,7 +118,7 @@ I a dins poso els botons amb el Designer. Llavors em sortien un a sobre l'altre
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:minHeight="48dp"
-            android:text="RadioButton" />
+            android:text="Dona" />
     </RadioGroup>
     <!--Posem un boto switch que esta a la palette de la vista diseny i llavora amb la part de attributes marco la opcio
     de checked false per posar que per defecte no surti actiu llavors amb el mateix codi puc ajustar les posicions en per
@@ -133,7 +133,33 @@ I a dins poso els botons amb el Designer. Llavors em sortien un a sobre l'altre
         app:layout_constraintTop_toBottomOf="@+id/rgSexe"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
+<!--Creo dos buttons un per netejar i l'altre per enviar, per fer-ho ho faig des del designer i llavors attributes
+busco onClick i allà defineixo el nom per una funcio per cada un, aquestues funcions les escric en codi directament al MainActivity.kt
+i em serviràn per fer el que demano.-->
+    <Button
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="84dp"
+        android:layout_marginTop="36dp"
+        android:onClick="netejarForm"
+        android:text="Button"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/switchNotificacions"
+        tools:text="Netejar" />
 
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="36dp"
+        android:onClick="enviarForm"
+        android:text="Button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.394"
+        app:layout_constraintStart_toEndOf="@+id/button"
+        app:layout_constraintTop_toBottomOf="@+id/switchNotificacions"
+        tools:text="Enviar" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
