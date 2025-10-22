@@ -2,6 +2,8 @@ package com.example.cicledevida
 
 import android.os.Bundle
 import android.util.Log
+import android.view.View
+import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -44,6 +46,14 @@ class MainActivity : AppCompatActivity() {
     override fun onResume() {
         super.onResume()
         println("OnResume")
+
+
+    }
+    fun afegir(view: View){
+        Log.d("Missatge",view.tag.toString())
+        var textView: TextView
+        textView=findViewById(R.id.textView)
+        textView.text=view.tag.toString()
 
     }
 }
