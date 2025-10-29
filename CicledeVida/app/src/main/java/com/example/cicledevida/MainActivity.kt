@@ -53,7 +53,10 @@ class MainActivity : AppCompatActivity() {
         Log.d("Missatge",view.tag.toString())
         var textView: TextView
         textView=findViewById(R.id.textView)
-        textView.text=view.tag.toString()
-
+        textView.text=textView.text.toString()+view.tag.toString()
     }
+    fun esborrar(view: View){
+        var textView: TextView
+        textView=findViewById(R.id.textView)
+        textView.text=""}
 }
