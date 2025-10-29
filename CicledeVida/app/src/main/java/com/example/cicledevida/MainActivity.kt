@@ -59,4 +59,18 @@ class MainActivity : AppCompatActivity() {
         var textView: TextView
         textView=findViewById(R.id.textView)
         textView.text=""}
+    fun calcular(view: View){
+        Log.d("Missatge",view.tag.toString())
+    }
+
+    /*fun CharSequence.split(
+        vararg delimiters: String,
+        ignoreCase: Boolean = false,
+        limit: Int = 0
+    ): List<String>{return this.toString().splitList()}
+
+    fun sumar(view:View){
+        var textView: TextView
+        textView=findViewById(R.id.textView)
+        textView.text=*/
 }
