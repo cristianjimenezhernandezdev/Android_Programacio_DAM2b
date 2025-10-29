@@ -60,7 +60,10 @@ class MainActivity : AppCompatActivity() {
         textView=findViewById(R.id.textView)
         textView.text=""}
     fun calcular(view: View){
-        Log.d("Missatge",view.tag.toString())
+        var textView: TextView
+        textView=findViewById(R.id.textView)
+        textView.text="CALCULAT!"}
+
     }
 
     /*fun CharSequence.split(
@@ -73,4 +76,3 @@ class MainActivity : AppCompatActivity() {
         var textView: TextView
         textView=findViewById(R.id.textView)
         textView.text=*/
-}
