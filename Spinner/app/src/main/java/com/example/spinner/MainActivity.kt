@@ -17,13 +17,15 @@ class MainActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener {
 lateinit var adapter:ArrayAdapter<CharSequence>
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+        val interessos = listOf("Plataformes", "Novela Grafica", "RPG", "Estratègia", "JRPG", "Carreres")
         binding=ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
         val spinner: Spinner = binding.planetsSpinner
 // Create an ArrayAdapter using the string array and a default spinner layout.
         adapter = ArrayAdapter.createFromResource(
             this,
-            R.array.Videojocs_array,
+            R.array.planets_array,
             android.R.layout.simple_spinner_item
         )
             // Specify the layout to use when the list of choices appears.
