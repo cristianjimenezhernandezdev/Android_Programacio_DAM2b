@@ -41,14 +41,14 @@ lateinit var adapter:ArrayAdapter<CharSequence>
         val adapterInteressos = ArrayAdapter(
             this,
             android.R.layout.simple_spinner_item,
-            interessos // Passem la llista de Kotlin
+            interessos
         )
         adapterInteressos.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
         spinnerInteressos.adapter = adapterInteressos
         spinnerInteressos.onItemSelectedListener = this
 
         }
-
+Falta modificar el onitemselected per diferenciar
     override fun onItemSelected(
         parent: AdapterView<*>?,
         view: View?,
