@@ -52,5 +52,11 @@
         android:text="Quin és el teu interès?" />
 
 
+    <Spinner
+        android:id="@+id/interessosSpinner"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+
 
 </LinearLayout>
