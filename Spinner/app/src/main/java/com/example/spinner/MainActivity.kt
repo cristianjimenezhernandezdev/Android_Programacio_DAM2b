@@ -6,6 +6,7 @@ import android.view.View
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import android.widget.Spinner
+import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -65,7 +66,11 @@ lateinit var adapterPlanetes:ArrayAdapter<CharSequence>
         R.id.interessos_spinner -> {
             val interesSeleccionat = parent.getItemAtPosition(position)
             Log.d("SPINNER", "Interès seleccionat: $interesSeleccionat")
+            //Faig que apareixi el missatge per pantalla amb el toast
+            Toast.makeText(this, "Interès seleccionat: $interesSeleccionat", Toast.LENGTH_SHORT).show()
+
         }
+
     }
     }
 
