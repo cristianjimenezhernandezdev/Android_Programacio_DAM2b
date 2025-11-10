@@ -14,7 +14,7 @@ import com.example.spinner.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener {
     lateinit var binding: ActivityMainBinding
-lateinit var adapter:ArrayAdapter<CharSequence>
+lateinit var adapterPlanetes:ArrayAdapter<CharSequence>
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding=ActivityMainBinding.inflate(layoutInflater)
@@ -23,21 +23,21 @@ lateinit var adapter:ArrayAdapter<CharSequence>
 
         val spinnerPlanetes: Spinner = binding.planetsSpinner
 // Create an ArrayAdapter using the string array and a default spinner layout.
-        adapter = ArrayAdapter.createFromResource(
+        adapterPlanetes = ArrayAdapter.createFromResource(
             this,
             R.array.planets_array,
             android.R.layout.simple_spinner_item
         )
             // Specify the layout to use when the list of choices appears.
-            adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
+            adapterPlanetes.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
             // Apply the adapter to the spinner.
-            spinnerPlanetes.adapter = adapter
+            spinnerPlanetes.adapter = adapterPlanetes
             spinnerPlanetes.onItemSelectedListener = this
 //////////////Per el segon spinner fent servis listof, bàsicament copio el codi i modifico una mica
+        // --- Spinner 2: Interessos (amb List)
         val spinnerInteressos: Spinner = binding.interessosSpinner
-        val interessos = listOf("Plataformes", "Novela Grafica", "RPG", "Estratègia", "JRPG", "Carreres")
+        val interessos = listOf("Plataformes", "Novel·la Gràfica", "RPG", "Estratègia", "JRPG", "Carreres")
 
-        // Creem un NOU adaptador per aquest Spinner
         val adapterInteressos = ArrayAdapter(
             this,
             android.R.layout.simple_spinner_item,
@@ -48,15 +48,25 @@ lateinit var adapter:ArrayAdapter<CharSequence>
         spinnerInteressos.onItemSelectedListener = this
 
         }
-Falta modificar el onitemselected per diferenciar
+//Modifico el onItem selected perque com que vull tenir els dos spinners el programa ha de saber quin és quin
+    //En cada moment
     override fun onItemSelected(
-        parent: AdapterView<*>?,
-        view: View?,
-        position: Int,
-        id: Long
-    ) {
-        Log.d("Missatge", position.toString())
-        Log.d("Element", (adapter.getItem(position)).toString())
+    parent: AdapterView<*>?,
+    view: View?,
+    position: Int,
+    id: Long
+) {
+    when (parent?.id) {
+        R.id.planets_spinner -> {
+            val planetaSeleccionat = adapterPlanetes.getItem(position)
+            Log.d("SPINNER", "Planeta seleccionat: $planetaSeleccionat")
+        }
+
+        R.id.interessos_spinner -> {
+            val interesSeleccionat = parent.getItemAtPosition(position)
+            Log.d("SPINNER", "Interès seleccionat: $interesSeleccionat")
+        }
+    }
     }
 
     override fun onNothingSelected(parent: AdapterView<*>?) {
