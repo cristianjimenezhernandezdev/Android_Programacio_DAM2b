@@ -1,7 +1,6 @@
 package com.example.spinner
 
 import android.annotation.SuppressLint
-import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.view.View
@@ -15,11 +14,8 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.example.spinner.databinding.ActivityMainBinding
 
-private val ActivityMainBinding.button: Any
-
 class MainActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener {
     lateinit var binding: ActivityMainBinding
-
 lateinit var adapterPlanetes:ArrayAdapter<CharSequence>
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -53,16 +49,7 @@ lateinit var adapterPlanetes:ArrayAdapter<CharSequence>
         spinnerInteressos.adapter = adapterInteressos
         spinnerInteressos.onItemSelectedListener = this
 
-        binding.button.setOnClickListener {
-            // Aquí estava l'error, s'ha afegit el "=" i mogut la paraula "Intent"
-            val intent = Intent(applicationContext, MainActivity2::class.java)
-            intent.putExtra("Item", pos.toString())
-
-            startActivity(intent)
         }
-
-
-    }
 //Modifico el onItem selected perque com que vull tenir els dos spinners el programa ha de saber quin és quin
     //En cada moment
     override fun onItemSelected(
@@ -92,6 +79,4 @@ lateinit var adapterPlanetes:ArrayAdapter<CharSequence>
         TODO("Not yet implemented")
     }
 }
-
-private fun Any.setOnClickListener(function: () -> Unit) {}
 
