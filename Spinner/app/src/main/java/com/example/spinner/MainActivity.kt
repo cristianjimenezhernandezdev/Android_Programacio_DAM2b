@@ -25,6 +25,10 @@ lateinit var adapterPlanetes:ArrayAdapter<CharSequence>
     private var pos: Int = -1
     private var textSeleccionat: String = ""
 
+    //Creo una variable boolenana per veure si el primer element de la llista
+    //interessos està actiu perque no em salti directament
+    private var primerSeleccionat = true
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding=ActivityMainBinding.inflate(layoutInflater)
@@ -78,18 +82,25 @@ lateinit var adapterPlanetes:ArrayAdapter<CharSequence>
         }
 
         R.id.interessos_spinner -> {
+            if (primerSeleccionat)  {
+                primerSeleccionat = false // Canviem el bool i per la proxima ja serà fals i s'executarà
+                return //Amb el return evitem que segueixi i passa al activity2, pero amb el bool d'abans no impedeixo que es faci la segona vegada
+            }
             //Assignem valors als parametres de posicio i text seleccionat que correspondran amb
             //els que estan a la pantalla
             val interesSeleccionat = parent.getItemAtPosition(position).toString()
             pos = position
             textSeleccionat = interesSeleccionat
+            //creem el intent
+            val  intent = android . content . Intent(this, MainActivity2::class.java)
             //Enviem al segon activity la posicio i el text del spinner que selccionem
             intent.putExtra("posicio", pos)
             intent.putExtra("text", textSeleccionat)
             Log.d("SPINNER", "Interès seleccionat: $interesSeleccionat")
             //Faig que apareixi el missatge per pantalla amb el toast
             Toast.makeText(this, "Interès seleccionat: $interesSeleccionat", Toast.LENGTH_SHORT).show()
-
+            // Anem a la Activity2
+            startActivity(intent)
         }
 
     }
