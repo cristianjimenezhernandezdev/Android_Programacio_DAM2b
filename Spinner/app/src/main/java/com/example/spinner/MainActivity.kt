@@ -21,11 +21,16 @@ class MainActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener {
     lateinit var binding: ActivityMainBinding
 
 lateinit var adapterPlanetes:ArrayAdapter<CharSequence>
+//Declaro les variables que pasare el activity2
     private var pos: Int = -1
+    private var textSeleccionat: String = ""
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding=ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+
         ////Per els Spinner Planetes----------------------------
 
         val spinnerPlanetes: Spinner = binding.planetsSpinner
@@ -54,13 +59,7 @@ lateinit var adapterPlanetes:ArrayAdapter<CharSequence>
         spinnerInteressos.adapter = adapterInteressos
         spinnerInteressos.onItemSelectedListener = this
 
-        binding.button.setOnClickListener {
-            // Aquí estava l'error, s'ha afegit el "=" i mogut la paraula "Intent"
-            val intent = Intent(applicationContext, MainActivity2::class.java)
-            intent.putExtra("Item", pos.toString())
 
-            startActivity(intent)
-        }
 
 
     }
@@ -79,7 +78,14 @@ lateinit var adapterPlanetes:ArrayAdapter<CharSequence>
         }
 
         R.id.interessos_spinner -> {
-            val interesSeleccionat = parent.getItemAtPosition(position)
+            //Assignem valors als parametres de posicio i text seleccionat que correspondran amb
+            //els que estan a la pantalla
+            val interesSeleccionat = parent.getItemAtPosition(position).toString()
+            pos = position
+            textSeleccionat = interesSeleccionat
+            //Enviem al segon activity la posicio i el text del spinner que selccionem
+            intent.putExtra("posicio", pos)
+            intent.putExtra("text", textSeleccionat)
             Log.d("SPINNER", "Interès seleccionat: $interesSeleccionat")
             //Faig que apareixi el missatge per pantalla amb el toast
             Toast.makeText(this, "Interès seleccionat: $interesSeleccionat", Toast.LENGTH_SHORT).show()

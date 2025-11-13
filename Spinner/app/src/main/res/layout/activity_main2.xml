@@ -7,13 +7,35 @@
     tools:context=".MainActivity2">
 
     <TextView
-        android:id="@+id/textView4"
+        android:id="@+id/textView5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Pantalla 2"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        android:text="Posicio"
+        tools:layout_editor_absoluteX="20dp"
+        tools:layout_editor_absoluteY="23dp" />
+
+    <TextView
+        android:id="@+id/textPosicio"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        tools:layout_editor_absoluteX="78dp"
+        tools:layout_editor_absoluteY="23dp" />
+
+    <TextView
+        android:id="@+id/textView7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Text"
+        tools:layout_editor_absoluteX="17dp"
+        tools:layout_editor_absoluteY="53dp" />
+
+    <TextView
+        android:id="@+id/textInteres"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        tools:layout_editor_absoluteX="90dp"
+        tools:layout_editor_absoluteY="52dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

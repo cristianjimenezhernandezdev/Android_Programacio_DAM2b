@@ -13,8 +13,15 @@ class MainActivity2 : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding=ActivityMain2Binding.inflate(layoutInflater)
         setContentView(binding.root)
-        val misssatge=intent.getStringExtra("Item")
-        binding.textView4.text=misssatge.toString()
+        //Poso les variables que venen de l'altre activity importades per els intent i faig el binding
+        // amb el xml del activity2
+        val posicio = intent.getIntExtra("posicio", -1)
+        val text = intent.getStringExtra("text")
+
+        binding.textPosicio.text = posicio.toString()
+        binding.textInteres.text = text
+
+
 
 
     }
