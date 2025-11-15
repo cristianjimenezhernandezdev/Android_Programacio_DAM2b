@@ -20,8 +20,10 @@ class MainActivity2 : AppCompatActivity() {
 
         binding.textPosicio.text = posicio.toString()
         binding.textInteres.text = text
+//Amb finish tanco el activity i per defecte tornarà a la anterior
+        binding.buttonTornar.setOnClickListener {
 
-
+            finish()}
 
 
     }
