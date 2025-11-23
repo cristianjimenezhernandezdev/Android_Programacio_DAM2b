@@ -14,28 +14,28 @@
         android:id="@+id/txtNom"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="40dp"
+        android:layout_marginBottom="48dp"
         android:text="Nom"/>
 
     <EditText
         android:id="@+id/txtCognom"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="40dp"
+        android:layout_marginBottom="48dp"
         android:text="Cognoms"/>
 
     <EditText
         android:id="@+id/txtLink"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="40dp"
+        android:layout_marginBottom="48dp"
         android:text="Link Repositori"/>
 
     <Spinner
         android:id="@+id/formatSpinner"
         android:layout_width="300dp"
-        android:layout_height="40dp"
-        android:layout_marginBottom="40dp"
+        android:layout_height="48dp"
+        android:layout_marginBottom="48dp"
         android:autofillHints="Format"/>
 
     <Button
