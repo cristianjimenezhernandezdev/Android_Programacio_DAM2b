@@ -11,17 +11,39 @@
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
+        android:text="Nom"
 
         android:id="@+id/etName"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-    <CheckBox
-        android:layout_width="300dp"
+    <EditText
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/cbVip"/>
+        android:text="Cognom"
+
+        android:id="@+id/etCognom"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Link Github"
+
+        android:id="@+id/etLink"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <CheckBox
+        android:id="@+id/cbVip"
+        android:layout_width="87dp"
+        android:layout_height="wrap_content"
+        android:text="Formal" />
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

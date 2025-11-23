@@ -3,6 +3,7 @@ package com.example.uservip
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Toast
 import com.example.uservip.UserVipApplication.Companion.prefs
 import com.example.uservip.databinding.ActivityMainBinding
 
@@ -37,16 +38,20 @@ class MainActivity : AppCompatActivity() {
     fun accesToDatail()
     {
         //Validem el nom
-        if(binding.etName.text.toString().isNotEmpty())
+        if(binding.etName.text.toString().isNotEmpty()&&binding.etCognom.text.toString().isNotEmpty()&&binding.etLink.text.toString().isNotEmpty())
         {
             //Guarcem l'usuari
             prefs.saveName(binding.etName.text.toString())
-            //Guardem el VIO
+            prefs.saveCognom(binding.etCognom.text.toString())
+            prefs.saveLink(binding.etLink.text.toString())
+                     //Guardem el VIO
             prefs.saveVIP(binding.cbVip.isChecked)
             goToDetail()
         }
         else {
-            //altre
+
+            //posem el toast
+            Toast.makeText(this, "Les dades no poden ser buides", Toast.LENGTH_SHORT).show()
         }
     }
     fun goToDetail()
