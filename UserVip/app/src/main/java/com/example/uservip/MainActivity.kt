@@ -54,8 +54,19 @@ class MainActivity : AppCompatActivity() {
             Toast.makeText(this, "Les dades no poden ser buides", Toast.LENGTH_SHORT).show()
         }
     }
-    fun goToDetail()
+
+
+    fun goToDetail(){
+    if(prefs.getVip())
     {
         startActivity(Intent(this,ResultActivity::class.java))
     }
+
+    else
+    {
+        startActivity(Intent(this, MainActivity2::class.java))
+    }
+    }
+
+
 }

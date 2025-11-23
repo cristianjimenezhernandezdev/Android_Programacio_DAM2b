@@ -23,8 +23,13 @@ class ResultActivity : AppCompatActivity() {
         }
         //Agafem el nom
         val userName = prefs.getName()
+        val userCognom = prefs.getCognom()
+        val userLink = prefs.getLink()
         //Mostrem la benvinguda al nom guardat a la BDD
         binding.tvName.text = "Benvingut $userName"
+        binding.tvCognom.text = "Cognoms: $userCognom"
+        binding.tvLink.text = "Link: $userLink"
+
 
         //Recuperem el VIP
         if(prefs.getVip())
