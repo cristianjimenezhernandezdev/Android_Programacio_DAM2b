@@ -9,16 +9,13 @@ class Prefs(val context: Context) {
     val SHARED_USER_NAME ="nom"
     val SHARED_USER_COGNOM ="Cognom"
     val SHARED_USER_LINK ="Link"
-    val SHARED_VIP ="Mydtb"
+    val SHARED_VIP="Vip"
 
     //Instrucció per recuperar les preferències
     val storage = context.getSharedPreferences(SHARED_NAME,0)
 
-    //funcions per guardar
 
-
-
-    //Funció per guardar el nom
+    //Funció per guardar
     fun saveCognom(name:String){
         //Guardem a la nostra SharedPreference
         storage.edit().putString(SHARED_USER_COGNOM,name).apply()
@@ -40,7 +37,7 @@ class Prefs(val context: Context) {
 
     //Funcions per recuperar dades
 
-    //Funció per recuperar el nom
+
     fun getName():String{
         //Posem el !! perquè sinó detecta que podria ser null. També podriem canviar el retorn a String?
         return storage.getString(SHARED_USER_NAME,"")!!

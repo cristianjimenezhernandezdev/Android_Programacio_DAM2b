@@ -39,6 +39,6 @@ class ResultActivity : AppCompatActivity() {
     }
     fun setVIPColorBackground()
     {
-        binding.container.setBackgroundColor(ContextCompat.getColor(this,R.color.purple_200))
+        binding.container.setBackgroundColor(ContextCompat.getColor(this,R.color.teal_200))
     }
 }
