@@ -11,7 +11,7 @@
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Nom"
+        android:hint="Nom"
 
         android:id="@+id/etName"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -21,8 +21,7 @@
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Cognom"
-
+        android:hint="Cognom"
         android:id="@+id/etCognom"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -31,7 +30,7 @@
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Link Github"
+        android:hint="Link Github"
 
         android:id="@+id/etLink"
         app:layout_constraintBottom_toBottomOf="parent"
