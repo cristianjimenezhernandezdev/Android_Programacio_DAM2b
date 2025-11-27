@@ -1,9 +1,9 @@
-package com.example.uservip
+package com.example.preferencies
 
 import android.app.Application
 
 //Aquesta aplicació s'executarà abans que l'activityMaiun
-class UserVipApplication:Application() {
+class PreferenciesApp:Application() {
 
     //crearem una instancia de prefs peruqè tothom pugui accedir
     companion object{

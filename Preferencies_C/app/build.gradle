@@ -4,11 +4,11 @@ plugins {
 }
 
 android {
-    namespace 'com.example.uservip'
+    namespace 'com.example.preferencies'
     compileSdk 33
 
     defaultConfig {
-        applicationId "com.example.uservip"
+        applicationId "com.example.preferencies"
         minSdk 21
         targetSdk 33
         versionCode 1

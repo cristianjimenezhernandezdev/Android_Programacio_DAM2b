@@ -1,4 +1,4 @@
-package com.example.uservip
+package com.example.preferencies
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
@@ -7,8 +7,8 @@ import android.view.View
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import android.widget.Toast
-import com.example.uservip.UserVipApplication.Companion.prefs
-import com.example.uservip.databinding.ActivityMainBinding
+import com.example.preferencies.PreferenciesApp.Companion.prefs
+import com.example.preferencies.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener {
 
@@ -110,8 +110,8 @@ class MainActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener {
 
     fun goToDetail() {
         if (prefs.getVip()) {
-            // Usuari VIP va a ResultActivity
-            startActivity(Intent(this, ResultActivity::class.java))
+            // Usuari VIP va a MainActivity3
+            startActivity(Intent(this, MainActivity3::class.java))
         } else {
             // Usuari normal va a MainActivity2 amb les dades del Spinner
             val intent = Intent(this, MainActivity2::class.java)

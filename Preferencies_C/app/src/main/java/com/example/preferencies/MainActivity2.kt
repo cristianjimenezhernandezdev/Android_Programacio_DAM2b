@@ -1,10 +1,10 @@
-package com.example.uservip
+package com.example.preferencies
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.core.content.ContextCompat
-import com.example.uservip.UserVipApplication.Companion.prefs
-import com.example.uservip.databinding.ActivityResultBinding
+import com.example.preferencies.PreferenciesApp.Companion.prefs
+import com.example.preferencies.databinding.ActivityResultBinding
 
 class MainActivity2 : AppCompatActivity() {
     private lateinit var binding:ActivityResultBinding

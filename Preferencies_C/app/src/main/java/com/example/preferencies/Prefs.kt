@@ -1,4 +1,4 @@
-package com.example.uservip
+package com.example.preferencies
 
 import android.content.Context
 
