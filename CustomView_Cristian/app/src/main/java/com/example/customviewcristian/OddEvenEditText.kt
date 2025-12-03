@@ -1,11 +1,13 @@
 package com.example.customviewcristian
 
 import android.content.Context
+import android.graphics.PorterDuff
 import android.text.Editable
 import android.text.InputType
 import android.text.TextWatcher
 import android.util.AttributeSet
 import androidx.appcompat.widget.AppCompatEditText
+import androidx.core.content.ContextCompat
 
 class OddEvenEditText : AppCompatEditText {
     constructor(context: Context) : super(context)
@@ -17,6 +19,13 @@ class OddEvenEditText : AppCompatEditText {
 
         addTextChangedListener(object : TextWatcher {
             override fun afterTextChanged(p0: Editable?) {
+                if (!p0.isNullOrEmpty()) {
+                    if (p0.toString().toDouble() % 2 == 0.0) {
+                        background.setColorFilter(ContextCompat.getColor(context, R.color.blue), PorterDuff.Mode.SRC_IN)
+                    } else {
+                        background.setColorFilter(ContextCompat.getColor(context, R.color.red), PorterDuff.Mode.SRC_IN)
+                    }
+                }
             }
 
             override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
