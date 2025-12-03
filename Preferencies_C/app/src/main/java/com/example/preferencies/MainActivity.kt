@@ -33,7 +33,8 @@ class MainActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener {
     }
 
 
-    // 🔹 Configuració del Spinner
+    //Configuració del Spinner
+    //Creem un array listOf amb els valors del Spinner
     private fun initSpinner() {
         val interessos = listOf(
             "Formal",
@@ -70,7 +71,7 @@ class MainActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener {
     }
 
     // guardar a SharedPreferences
-    fun accesToDatail() {
+    fun accesToDatail() {//comprovo que els camps no estiguin buits
         if (binding.etName.text.toString().isNotEmpty() &&
             binding.etCognom.text.toString().isNotEmpty() &&
             binding.etLink.text.toString().isNotEmpty()
@@ -80,7 +81,7 @@ class MainActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener {
             prefs.saveLink(binding.etLink.text.toString())
             prefs.saveVIP(textSeleccionat == "Formal")
             goToDetail()
-        } else {
+        } else {//si algun dels camps està buit, mostrem un missatge amb un toast
             Toast.makeText(
                 this,
                 "Les dades no poden ser buides",
@@ -89,7 +90,7 @@ class MainActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener {
         }
     }
 
-    // Quan es selecciona un element del Spinner
+    // Quan es selecciona un element del Spinner es fa el itemselected
     override fun onItemSelected(
         parent: AdapterView<*>?,
         view: View?,
@@ -107,13 +108,13 @@ class MainActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener {
 
     }
 
-
+//
     fun goToDetail() {
         if (prefs.getVip()) {
-            // Usuari VIP va a MainActivity3
+            // modo formal va a MainActivity3
             startActivity(Intent(this, MainActivity3::class.java))
         } else {
-            // Usuari normal va a MainActivity2 amb les dades del Spinner
+            // modo normal va a MainActivity2 amb les dades del Spinner
             val intent = Intent(this, MainActivity2::class.java)
             intent.putExtra("posicio", pos)
             intent.putExtra("text", textSeleccionat)

@@ -5,7 +5,7 @@ import android.app.Application
 //Aquesta aplicació s'executarà abans que l'activityMaiun
 class PreferenciesApp:Application() {
 
-    //crearem una instancia de prefs peruqè tothom pugui accedir
+    //crearem una instancia de prefs perquè tothom pugui accedir
     companion object{
         lateinit var prefs: Prefs
     }

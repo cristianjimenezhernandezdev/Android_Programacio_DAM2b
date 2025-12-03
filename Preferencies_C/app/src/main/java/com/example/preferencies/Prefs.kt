@@ -15,21 +15,21 @@ class Prefs(val context: Context) {
     val storage = context.getSharedPreferences(SHARED_NAME,0)
 
 
-    //Funció per guardar
+    //Funcións per guardar
     fun saveCognom(name:String){
-        //Guardem a la nostra SharedPreference
+        //Guardem el cognom
         storage.edit().putString(SHARED_USER_COGNOM,name).apply()
     }
     fun saveLink(name:String){
-        //Guardem a la nostra SharedPreference
+        //Guardem el link
         storage.edit().putString(SHARED_USER_LINK,name).apply()
     }
     fun saveName(name:String){
-        //Guardem a la nostra SharedPreference
+        //Guardem el nom
         storage.edit().putString(SHARED_USER_NAME,name).apply()
     }
 
-    //Funció per guardar el vip
+    //Funció per guardar el vip (en el nostre cas formal)
     fun saveVIP(vip:Boolean){
         //Guardem a la nostra SharedPreference
         storage.edit().putBoolean(SHARED_VIP,vip).apply()
@@ -49,7 +49,7 @@ class Prefs(val context: Context) {
         return storage.getString(SHARED_USER_LINK,"")!!
     }
 
-    //Funció per recuperar el vip
+    //Funció per recuperar el vip (en el nostre cas modo formal)
     fun getVip():Boolean{
         return storage.getBoolean(SHARED_VIP,false)
     }
