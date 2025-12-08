@@ -1,6 +1,7 @@
 package com.example.customviewcristian
 
 import android.content.Context
+import android.graphics.PorterDuff
 import android.text.Editable
 import android.text.TextWatcher
 import android.util.AttributeSet
@@ -9,14 +10,15 @@ import android.widget.EditText
 import android.widget.RelativeLayout
 import android.widget.TextView
 import androidx.core.content.ContextCompat
+import java.util.regex.Pattern
 
 class EmailValidatorView(context: Context, attrs: AttributeSet) : RelativeLayout(context, attrs), TextWatcher {
 
     var successColor: Int
     var errorColor: Int
 
-    private lateinit var etMail: EditText
-    private lateinit var tvErrorCode: TextView
+    private val etMail: EditText
+    private val tvErrorCode: TextView
 
     init {
         inflate(context, R.layout.email_validator, this)
@@ -33,13 +35,24 @@ class EmailValidatorView(context: Context, attrs: AttributeSet) : RelativeLayout
         etMail.addTextChangedListener(this)
     }
 
+    override fun afterTextChanged(s: Editable?) {
+    }
+
     override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
     }
 
     override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
-    }
+        val pattern = Pattern.compile("\\b[\\w.%-]+@[-.\\w]+\\.[A-Za-z]{2,4}\\b")
+        val matcher = pattern.matcher(s.toString())
+        val valid = matcher.matches()
 
-    override fun afterTextChanged(s: Editable?) {
+        if (valid) {
+            tvErrorCode.visibility = View.INVISIBLE
+            etMail.background.setColorFilter(successColor, PorterDuff.Mode.SRC_IN)
+        } else {
+            tvErrorCode.visibility = View.VISIBLE
+            etMail.background.setColorFilter(errorColor, PorterDuff.Mode.SRC_IN)
+        }
     }
 }
 
