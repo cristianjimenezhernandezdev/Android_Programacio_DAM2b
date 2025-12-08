@@ -11,6 +11,7 @@ import android.widget.RelativeLayout
 import android.widget.TextView
 import androidx.core.content.ContextCompat
 import java.util.regex.Pattern
+import kotlin.text.matches
 
 class EmailValidatorView(context: Context, attrs: AttributeSet) : RelativeLayout(context, attrs), TextWatcher {
 
@@ -31,7 +32,9 @@ class EmailValidatorView(context: Context, attrs: AttributeSet) : RelativeLayout
         errorColor = attributes.getColor(R.styleable.EmailValidatorView_underlineErrorColor, ContextCompat.getColor(context, R.color.red))
         successColor = attributes.getColor(R.styleable.EmailValidatorView_underlineSuccessColor, ContextCompat.getColor(context, R.color.green))
         attributes.recycle()
-
+        //perque es mostri el hunt hem de posar la propietat aqui
+        val hint = attrs.getAttributeValue("http://schemas.android.com/apk/res/android", "hint")
+        etMail.hint = hint
         etMail.addTextChangedListener(this)
     }
 
@@ -48,11 +51,13 @@ class EmailValidatorView(context: Context, attrs: AttributeSet) : RelativeLayout
 
         if (valid) {
             tvErrorCode.visibility = View.INVISIBLE
-            etMail.background.setColorFilter(successColor, PorterDuff.Mode.SRC_IN)
+            etMail.backgroundTintList = android.content.res.ColorStateList.valueOf(successColor)
         } else {
             tvErrorCode.visibility = View.VISIBLE
-            etMail.background.setColorFilter(errorColor, PorterDuff.Mode.SRC_IN)
+            etMail.backgroundTintList = android.content.res.ColorStateList.valueOf(errorColor)
         }
     }
+
 }
+
 
