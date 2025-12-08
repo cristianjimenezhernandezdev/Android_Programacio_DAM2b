@@ -23,21 +23,26 @@ class NumeroValitaror0View(context: Context, attrs: AttributeSet) : RelativeLayo
 
 
     init {
-        inflate(context, R.layout.numero_validator_0, this)  // abans email_validator
-
+        inflate(context, R.layout.numero_validator_0, this)
 
         etNumero = findViewById(R.id.etNumber)
         tvErrorNumero = findViewById(R.id.tvErrorNumber)
 
+        // Configurar colors directament
+        errorColor = ContextCompat.getColor(context, R.color.red)
+        successColor = ContextCompat.getColor(context, R.color.green)
 
-        val attributes = context.obtainStyledAttributes(attrs, R.styleable.EmailValidatorView)
-        tvErrorNumero.text = attributes.getString(R.styleable.EmailValidatorView_textError)
-        errorColor = attributes.getColor(R.styleable.EmailValidatorView_underlineErrorColor, ContextCompat.getColor(context, R.color.red))
-        successColor = attributes.getColor(R.styleable.EmailValidatorView_underlineSuccessColor, ContextCompat.getColor(context, R.color.green))
-        attributes.recycle()
-        //perque es mostri el hunt hem de posar la propietat aqui
+        // Assegurar que el text d'error està configurat
+        if (tvErrorNumero.text.isNullOrEmpty()) {
+            tvErrorNumero.text = "El número no pot acabar en 0"
+        }
+
+        // Configurar hint si existeix
         val hint = attrs.getAttributeValue("http://schemas.android.com/apk/res/android", "hint")
-        etNumero.hint = hint
+        if (!hint.isNullOrEmpty()) {
+            etNumero.hint = hint
+        }
+
         etNumero.addTextChangedListener(this)
     }
 

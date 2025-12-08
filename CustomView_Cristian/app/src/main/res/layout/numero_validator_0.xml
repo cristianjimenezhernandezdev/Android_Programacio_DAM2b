@@ -7,6 +7,7 @@
         android:id="@+id/etNumber"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:hint="Introdueix un número"
         android:inputType="number" />
 
     <TextView
@@ -14,6 +15,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/etNumber"
+        android:text="El número no pot acabar en 0"
         android:textColor="@android:color/holo_red_dark"
         android:visibility="invisible" />
 
