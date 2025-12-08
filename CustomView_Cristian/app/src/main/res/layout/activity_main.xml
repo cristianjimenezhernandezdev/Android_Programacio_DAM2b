@@ -13,6 +13,19 @@
 
 
 
+    <TextView
+        android:id="@+id/tvTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="APP de Validacions"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginBottom="16dp"
+        android:layout_marginTop="16dp" />
+
     <com.example.customviewcristian.OddEvenEditText
         android:id="@+id/oddEvenEditText"
         android:layout_width="0dp"
@@ -20,13 +33,15 @@
         android:hint="Escriu un número"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@id/tvTitle"
+        android:layout_marginBottom="16dp" />
 
     <com.example.customviewcristian.EmailValidatorView
         android:id="@+id/emailValidator"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="0dp"
+        android:layout_marginBottom="16dp"
         android:hint="Escriu un mail"
         app:textError="Introduzca un email válido"
         app:underlineErrorColor="@color/red"
@@ -35,14 +50,15 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/oddEvenEditText" />
 
-    <TextView
-        android:layout_width="wrap_content"
+    <com.example.customviewcristian.NumeroValitaror0View
+        android:id="@+id/numeroValidator"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="APP de Validacions"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:hint="No posis 0"
+        android:layout_marginBottom="16dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@id/emailValidator" />
 
 
 
