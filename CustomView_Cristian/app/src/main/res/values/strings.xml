@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">CustomViewCristian</string>
+    <string name="app_validacions_title">APP de Validacions</string>
+    <string name="hint_odd_even">Escriu un número</string>
+    <string name="hint_email">Escriu un mail</string>
+    <string name="error_email">Introduzca un email válido</string>
+    <string name="hint_numero_validator_0">No posis 0</string>
+    <string name="error_numero_validator_0">El número no pot acabar en 0</string>
+    <string name="hint_dni">DNI de 8 lletres més numero</string>
+    <string name="error_dni">TUUU, no siguis PILLO i fes-ho BEE!</string>
 </resources>
