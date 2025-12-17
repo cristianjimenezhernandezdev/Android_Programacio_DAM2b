@@ -1,0 +1,4 @@
+shared preferences
+custom view
+spinner
+implementar una aplicacio, el login, registre, nom cognom, pasar d'una activitat a una altre amb un spinner o boto o algo
