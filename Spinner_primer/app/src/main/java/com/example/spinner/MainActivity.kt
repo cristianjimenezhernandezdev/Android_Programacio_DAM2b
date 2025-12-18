@@ -25,7 +25,7 @@ lateinit var adapterPlanetes:ArrayAdapter<CharSequence>
 
         val spinnerPlanetes: Spinner = binding.planetsSpinner
 // Create an ArrayAdapter using the string array and a default spinner layout.
-        adapterPlanetes = ArrayAdapter.createFromResource(
+        adapterInteressos = ArrayAdapter.createFromResource(
             this,
             R.array.planets_array,
             android.R.layout.simple_spinner_item

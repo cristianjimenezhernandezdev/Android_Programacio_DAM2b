@@ -34,7 +34,7 @@
             android:padding="16dp" />
 
     </androidx.cardview.widget.CardView>
-
+<!--El crido directament amb la ruta completa-->
     <com.example.customviewcristian.OddEvenEditText
         android:id="@+id/oddEvenEditText"
         android:layout_width="0dp"

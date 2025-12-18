@@ -54,12 +54,20 @@
         app:layout_constraintEnd_toEndOf="parent"
 
         />
+    <TextView
+        android:id="@+id/tvData"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=""
+        app:layout_constraintTop_toBottomOf="@id/calendarView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/tilPassword"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/calendarView"
+        app:layout_constraintTop_toBottomOf="@id/tvData"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         >
@@ -102,5 +110,29 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginTop="12dp"/>
+    <!-- Botó Netejar -->
+    <Button
+        android:id="@+id/btnNetejar"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Netejar"
+        app:layout_constraintTop_toBottomOf="@id/swAvisos"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/btnRegistrar"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintHorizontal_chainStyle="packed" />
+
+    <!-- Botó Registrar -->
+    <Button
+        android:id="@+id/btnRegistrar"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Registrar"
+        app:layout_constraintTop_toBottomOf="@id/swAvisos"
+        app:layout_constraintStart_toEndOf="@id/btnNetejar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_weight="1" />
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

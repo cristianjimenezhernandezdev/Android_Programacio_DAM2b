@@ -49,6 +49,8 @@ lateinit var adapterPlanetes:ArrayAdapter<CharSequence>
             // Apply the adapter to the spinner.
             spinnerPlanetes.adapter = adapterPlanetes
             spinnerPlanetes.onItemSelectedListener = this
+
+
 //////////////Per el segon spinner fent servis listof, bàsicament copio el codi i modifico una mica
         // --- Spinner 2: Interessos (amb List)
         val spinnerInteressos: Spinner = binding.interessosSpinner
@@ -91,8 +93,9 @@ lateinit var adapterPlanetes:ArrayAdapter<CharSequence>
             val interesSeleccionat = parent.getItemAtPosition(position).toString()
             pos = position
             textSeleccionat = interesSeleccionat
+
             //creem el intent
-            val  intent = android . content . Intent(this, MainActivity2::class.java)
+            val  intent = Intent(this, MainActivity2::class.java)
             //Enviem al segon activity la posicio i el text del spinner que selccionem
             intent.putExtra("posicio", pos)
             intent.putExtra("text", textSeleccionat)
