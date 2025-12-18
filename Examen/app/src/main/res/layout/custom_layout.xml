@@ -5,7 +5,7 @@
     android:orientation="vertical"
     android:padding="16dp">
 
-    <!-- Exemple de custom layout: pots afegir aquí el que vulguis -->
+
     <TextView
         android:id="@+id/customTitle"
         android:layout_width="wrap_content"
@@ -18,7 +18,6 @@
         android:id="@+id/customEdit"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Introdueix telèfon..."
         android:inputType="number"
         android:maxLength="9"/>
 
