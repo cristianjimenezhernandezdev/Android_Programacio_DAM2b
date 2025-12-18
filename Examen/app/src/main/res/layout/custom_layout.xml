@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <!-- Exemple de custom layout: pots afegir aquí el que vulguis -->
+    <TextView
+        android:id="@+id/customTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Títol custom"
+        android:textStyle="bold"
+        android:textSize="18sp"/>
+
+    <EditText
+        android:id="@+id/customEdit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Introdueix telèfon..."
+        android:inputType="number"
+        android:maxLength="9"/>
+
+</LinearLayout>
