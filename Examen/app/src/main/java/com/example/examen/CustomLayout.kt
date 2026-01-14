@@ -17,17 +17,17 @@ class CustomLayout(context: Context, attrs: AttributeSet) : RelativeLayout(conte
     private var errorColor: Int = 0
 
     init {
-        // Infla el layout customitzat
+        // posa el layout custom
         LayoutInflater.from(context).inflate(R.layout.custom_layout, this, true)
         editText = findViewById(R.id.customEdit)
         editText.addTextChangedListener(this)
 
-        // Llegeix l'atribut personalitzat errorColor
+
         val a: TypedArray = context.obtainStyledAttributes(attrs, R.styleable.CustomLayout)
         errorColor = a.getColor(R.styleable.CustomLayout_errorColor, ContextCompat.getColor(context, android.R.color.holo_red_dark))
         a.recycle()
     }
-
+//Faig el mateix truco que amb l'exercici del DNI, i limitar a 9 numeros i mirar que siguin digit
     override fun afterTextChanged(s: Editable?) {
         val text = s?.toString() ?: ""
         if (text.length == 9 && text.all { it.isDigit() }) {
@@ -35,8 +35,8 @@ class CustomLayout(context: Context, attrs: AttributeSet) : RelativeLayout(conte
             editText.background = ContextCompat.getDrawable(context, android.R.drawable.edit_text)
             editText.error = null
         } else {
-            // Error: subratllat vermell i missatge
-            // Utilitza un GradientDrawable per canviar el color del subratllat segons l'atribut errorColor
+
+            // Faig el GradientDrawable que tinc en una prova
             val drawable = android.graphics.drawable.GradientDrawable()
             drawable.setColor(android.graphics.Color.TRANSPARENT)
             drawable.cornerRadius = 8f

@@ -2,6 +2,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".MainActivity"
     android:orientation="vertical"
     android:padding="16dp">
@@ -64,15 +65,13 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="Telefon" />
-        <!-- Amb aixo controlo la mida maxima per si no em dona temps a fer-ho amb el custom -->
-        <EditText
-            android:id="@+id/etTelefon"
+
+        <com.example.examen.CustomLayout
+            android:id="@+id/customTelefon"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="2"
-            android:inputType="number"
-            android:maxLength="9"
-             />
+            app:errorColor="@android:color/holo_red_dark" />
     </LinearLayout>
 
     <!-- Tipus -->
