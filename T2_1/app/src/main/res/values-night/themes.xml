@@ -2,6 +2,14 @@
     <!-- Base application theme. -->
     <style name="Base.Theme.T2_1_Fragments_menu" parent="Theme.Material3.DayNight.NoActionBar">
         <!-- Customize your dark theme here. -->
-        <!-- <item name="colorPrimary">@color/my_dark_primary</item> -->
+        <item name="colorPrimary">@color/primary</item>
+        <item name="colorPrimaryDark">@color/primary_dark</item>
+        <item name="colorSecondary">@color/secondary</item>
+        <item name="android:colorBackground">@color/background</item>
+    </style>
+
+    <!-- Estil per l'indicador de navegació -->
+    <style name="NavigationIndicatorStyle" parent="">
+        <item name="android:color">@color/nav_indicator</item>
     </style>
 </resources>
