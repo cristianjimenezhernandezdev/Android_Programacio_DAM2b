@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/itemFragment1"
+        android:icon="@drawable/ic_fragment"
+        android:title="Primer Fragment" />
+    <item
+        android:id="@+id/itemFragment2"
+        android:icon="@drawable/ic_fragment"
+        android:title="Segon Fragment" />
+    <item
+        android:id="@+id/itemFragment3"
+        android:icon="@drawable/ic_fragment"
+        android:title="Tercer Fragment" />
+</menu>
