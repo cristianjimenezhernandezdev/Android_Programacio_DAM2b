@@ -7,11 +7,26 @@ import androidx.fragment.app.Fragment
 
 class SegonFragment : Fragment(R.layout.fragment_segon) {
 
+    // Dades rebudes com a list. Les carguem a onCreate().
+    private var estudis: ArrayList<String> = arrayListOf()
+
+    companion object {
+        // Clau del Bundle per fer servir la llista.
+        private const val ARG_ESTUDIS = "Estudis"
+    }
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+
+        // Llegim els arguments (Bundle) abans de crear la vista.
+        // getStringArrayList(...) retorna null si no existeix la clau, (?: arrayListOf()) control d'errors.
+        estudis = arguments?.getStringArrayList(ARG_ESTUDIS) ?: arrayListOf()
+    }
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val estudis = arguments?.getStringArrayList("Estudis") ?: arrayListOf()
-
+        // Tenim la vista i la convertim en text per mostrar-la al TextView.
         val text = buildString {
             appendLine("Fragment 2")
             appendLine("Experiència acadèmica")

@@ -9,6 +9,7 @@
     android:background="@color/background"
     tools:context=".MainActivity">
 
+    <!-- Container on l'Activity col·loca/substitueix els Fragments (FragmentManager.commit) -->
     <FrameLayout
         android:id="@+id/fragmentContainer"
         android:layout_width="match_parent"
@@ -16,6 +17,7 @@
         android:layout_weight="1"
         android:padding="8dp" />
 
+    <!-- Menú inferior per navegar entre Fragments -->
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/navMenu"
         android:layout_width="match_parent"

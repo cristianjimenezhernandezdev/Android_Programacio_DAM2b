@@ -1,16 +1,17 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
-    <!-- Base application theme. -->
+    <!-- Tema base de l'app (Material3 DayNight): canvia automàticament entre mode clar i fosc -->
     <style name="Base.Theme.T2_1_Fragments_menu" parent="Theme.Material3.DayNight.NoActionBar">
-        <!-- Customize your light theme here. -->
+        <!-- Colors principals que s'apliquen a components del tema -->
         <item name="colorPrimary">@color/primary</item>
         <item name="colorPrimaryDark">@color/primary_dark</item>
         <item name="colorSecondary">@color/secondary</item>
         <item name="android:colorBackground">@color/background</item>
     </style>
 
+    <!-- Alias del tema que fa servir l'app al Manifest -->
     <style name="Theme.T2_1_Fragments_menu" parent="Base.Theme.T2_1_Fragments_menu" />
 
-    <!-- Estil per l'indicador de navegació -->
+    <!-- Estil de l'indicador actiu del BottomNavigationView (Active Indicator) -->
     <style name="NavigationIndicatorStyle" parent="">
         <item name="android:color">@color/nav_indicator</item>
     </style>

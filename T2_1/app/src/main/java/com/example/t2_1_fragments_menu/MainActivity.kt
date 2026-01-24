@@ -11,32 +11,47 @@ import com.google.android.material.bottomnavigation.BottomNavigationView
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+        // Punt d'entrada de l'Activity: carreguem el layout que conté
+        // 1) el container (FrameLayout) on fem els Fragments i
+        // 2) el BottomNavigationView per canviar de pantalla.
         setContentView(R.layout.activity_main)
 
+        // Referència al menú inferior (BottomNavigationView) per detectar quin item es selecciona.
         val navigation = findViewById<BottomNavigationView>(R.id.navMenu)
 
+        // Listener: quan l'usuari toca un item,
+        // - preparem un Bundle
+        // - i fem el canvi de Fragment amb el FragmentManager.
         navigation.setOnItemSelectedListener {
             when (it.itemId) {
                 R.id.itemFragment1 -> {
+                    // Enviem dades al al Fragment 1.
                     val bundle = bundleOf(
                         "Nom" to "Cristian",
-                        "Cognoms" to "Jimenez",
+                        "Cognoms" to "Jimenez Hernandez",
                         "Edat" to "39",
                         "DataNaixement" to "15-10-1986",
                         "LlocNaixement" to "Girona"
                     )
+
                     supportFragmentManager.commit {
                         setReorderingAllowed(true)
+
+                        // Fem servir replace(): substitueix el Fragment actual
+                        // pel nou Fragment dins del mateix container.
                         replace<PrimerFragment>(R.id.fragmentContainer, args = bundle)
                     }
                     return@setOnItemSelectedListener true
                 }
 
                 R.id.itemFragment2 -> {
+                    // Dades en forma de llista: ArrayList<String>.
+                    // Es passa al Fragment a través del Bundle i es recupera amb getStringArrayList(...).
                     val bundle = bundleOf(
                         "Estudis" to arrayListOf(
-                            "CFGM Sistemes Microinformàtics i Xarxes - Institut La Garrotxa (2003-2005)",
-                            "CFGS Desenvolupament d'Aplicacions Multiplataforma - IES Exemple (2024-2026)"
+                            "Grau en Psicologia - Universitat de Girona (2011-2015)",
+                            "CFGS Desenvolupament d'Aplicacions Multiplataforma - IES Campalans (2024-2026)"
                         )
                     )
                     supportFragmentManager.commit {
@@ -47,11 +62,12 @@ class MainActivity : AppCompatActivity() {
                 }
 
                 R.id.itemFragment3 -> {
+
                     val bundle = bundleOf(
                         "Feines" to arrayListOf(
-                            "Tècnic informàtic (2010-2015)",
-                            "Desenvolupador Android Jr (2016-2020)",
-                            "Desenvolupador Android (2020-Actualitat)"
+                            "Tècnic agronom - J.Sancho (2024-2025)",
+                            "Oficial de Manteniment- La cellera de Ter (2026)"
+
                         )
                     )
                     supportFragmentManager.commit {
@@ -64,10 +80,12 @@ class MainActivity : AppCompatActivity() {
             false
         }
 
-        // Fragment inicial
+        // Fragment inicial:
+        // - al tutorial s'afegeix amb add() com a primer Fragment que es veu en arrencar l'app.
+        // - després, quan naveguem amb el menú inferior, fem replace().
         val bundle = bundleOf(
             "Nom" to "Cristian",
-            "Cognoms" to "Jimenez",
+            "Cognoms" to "Jimenez Hernandez",
             "Edat" to "39",
             "DataNaixement" to "15-10-1986",
             "LlocNaixement" to "Girona"

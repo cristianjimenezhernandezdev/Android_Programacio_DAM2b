@@ -1,15 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/bg_fragment_screen"
     tools:context=".TercerFragment">
 
-    <TextView
+    <!-- Reutilitzem el mateix estil de card del Fragment 1 -->
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="Fragment 3"
-        android:id="@+id/fragmentText"/>
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_margin="16dp"
+        android:background="@drawable/bg_fragment_card"
+        android:elevation="2dp"
+        android:orientation="vertical">
 
-</LinearLayout>
+        <TextView
+            android:id="@+id/fragmentText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:lineSpacingExtra="4dp"
+            android:text="Fragment 3"
+            android:textColor="@color/on_surface"
+            android:textSize="16sp" />
 
+    </LinearLayout>
+
+</FrameLayout>
