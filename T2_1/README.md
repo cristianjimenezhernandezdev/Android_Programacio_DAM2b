@@ -1,6 +1,8 @@
 # T2_1 – Fragments + BottomNavigation (DAM2)
 
 Projecte Android fet amb a treball de classe. L’objectiu és navegar entre diferents fragments utilitzant un **BottomNavigationView**.
+Projecte Github:
+https://github.com/cristianjimenezhernandezdev/Android_Programacio_DAM2b/tree/master/T2_1
 
 ## Objectiu del projecte
 
