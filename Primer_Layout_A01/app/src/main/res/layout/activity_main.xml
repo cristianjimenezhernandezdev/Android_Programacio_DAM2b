@@ -46,6 +46,27 @@
             android:inputType="textPersonName" />
     </com.google.android.material.textfield.TextInputLayout>
 
+    <!-- Camp DNI amb validació de format -->
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/layoutDni"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="24dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintTop_toBottomOf="@id/layoutCognom"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:errorEnabled="true">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/etDni"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="DNI (12345678A)"
+            android:inputType="textCapCharacters"
+            android:maxLength="9" />
+    </com.google.android.material.textfield.TextInputLayout>
+
     <!-- Aqui és un text normal, pero al MainActivity li posem una funcio que agafarà aquest nom i
      farà que quan cliquem executi el DatePickerDialog que mostrarà un calendari i escriurà la data en aquest textInput -->
     <com.google.android.material.textfield.TextInputLayout
@@ -54,7 +75,7 @@
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="24dp"
         android:layout_marginTop="16dp"
-        app:layout_constraintTop_toBottomOf="@id/layoutCognom"
+        app:layout_constraintTop_toBottomOf="@id/layoutDni"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent">
 
