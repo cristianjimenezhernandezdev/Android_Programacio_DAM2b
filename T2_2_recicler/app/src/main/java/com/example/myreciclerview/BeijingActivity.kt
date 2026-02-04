@@ -10,33 +10,33 @@ class BeijingActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        // Assignem el layout XML corresponent a aquesta Activity.
+        // Assignem el layout XML
         setContentView(R.layout.activity_beijing)
 
         // Recuperem les dades passades des de la MainActivity via Intent Extras.
         // Si algun valor és null, utilitzem .orEmpty() per evitar errors.
-        val city = intent.getStringExtra(MainActivity.EXTRA_CIUTAT).orEmpty()
-        val province = intent.getStringExtra(MainActivity.EXTRA_PROVINCIA).orEmpty()
-        val population = intent.getStringExtra(MainActivity.EXTRA_POBLACIO).orEmpty()
+        val ciutat = intent.getStringExtra(MainActivity.EXTRA_CIUTAT).orEmpty()
+        val provincia = intent.getStringExtra(MainActivity.EXTRA_PROVINCIA).orEmpty()
+        val poblacio = intent.getStringExtra(MainActivity.EXTRA_POBLACIO).orEmpty()
         val photo = intent.getStringExtra(MainActivity.EXTRA_PHOTO)
 
-        // Busquem les vistes al layout (findViewById) i els hi assignem el valor rebut.
-        // Nota: Aquí no usem ViewBinding per simplicitat en aquest exemple concret, o perquè el layout no té <layout>.
-        findViewById<TextView>(R.id.tvCity).text = city
-        findViewById<TextView>(R.id.tvProvinceValue).text = province
-        findViewById<TextView>(R.id.tvPopulationValue).text = population
 
-        // Carreguem la imatge amb Glide a l'ImageView corresponent.
+        //Aqui és mes directe fer servir el Id
+        findViewById<TextView>(R.id.tvCity).text = ciutat
+        findViewById<TextView>(R.id.tvProvinceValue).text = provincia
+        findViewById<TextView>(R.id.tvPopulationValue).text = poblacio
+
+        // carguesm la imatge amb Glide al ImageView.
         Glide.with(this).load(photo).into(findViewById<ImageView>(R.id.ivCity))
 
-        // Configurem la barra d'acció per mostrar el títol de la ciutat i el botó "Enrere".
+        // Posem el boto per navegar enrere. Aquesta part es codi nou.
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
-        supportActionBar?.title = if (city.isNotBlank()) city else "Beijing"
+        supportActionBar?.title = if (ciutat.isNotBlank()) ciutat else "Beijing"
     }
 
-    // Gestiona l'acció de fer clic a la fletxa "Enrere" de la barra superior.
+
     override fun onSupportNavigateUp(): Boolean {
-        // Simula que s'ha premut el botó físic "Enrere" d'Android, tancant l'Activity actual.
+
         onBackPressedDispatcher.onBackPressed()
         return true
     }
