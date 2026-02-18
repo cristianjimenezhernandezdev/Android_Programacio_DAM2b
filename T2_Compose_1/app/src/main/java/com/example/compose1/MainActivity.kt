@@ -68,7 +68,7 @@ fun Greeting(name: String, modifier: Modifier = Modifier) {
                 modifier = Modifier.fillMaxWidth(),
                 singleLine = true)
             Spacer(modifier = Modifier.height(8.dp))
-            // Nota: Spacer con weight no es fiable dentro de LazyColumn; lo elimino
+
             }
 
 
@@ -81,9 +81,12 @@ fun Greeting(name: String, modifier: Modifier = Modifier) {
         verticalAlignment = Alignment.CenterVertically
 
     ) {
-        TextButton(onClick = { input += "CE" }) { Text(text = "CE") }
-        TextButton(onClick = { input += "C" }) { Text(text = "C") }
+        //El CE esborra l'ultim element
+        TextButton(onClick = { if (input.isNotEmpty()) input = input.dropLast(1) }) { Text(text = "CE") }
+        //Esborra tot
+        TextButton(onClick = { input = "" }) { Text(text = "C") }
         TextButton(onClick = { input += "%" }) { Text(text = "%") }
+        TextButton(onClick = { input += "÷" }) { Text(text = "÷") }
 
     }
     Row (modifier = Modifier
@@ -97,6 +100,7 @@ fun Greeting(name: String, modifier: Modifier = Modifier) {
         TextButton(onClick = { input += "7" }) { Text(text = "7") }
         TextButton(onClick = { input += "8" }) { Text(text = "8") }
         TextButton(onClick = { input += "9" }) { Text(text = "9") }
+        TextButton(onClick = { input += "×" }) { Text(text = "×") }
 
     }
         Row (modifier = Modifier
@@ -109,6 +113,7 @@ fun Greeting(name: String, modifier: Modifier = Modifier) {
             TextButton(onClick = { input += "4" }) { Text(text = "4") }
             TextButton(onClick = { input += "5" }) { Text(text = "5") }
             TextButton(onClick = { input += "6" }) { Text(text = "6") }
+            TextButton(onClick = { input += "-" }) { Text(text = "-") }
         }
         Row (modifier = Modifier
             .padding(24.dp)
@@ -120,7 +125,19 @@ fun Greeting(name: String, modifier: Modifier = Modifier) {
             TextButton(onClick = { input += "1" }) { Text(text = "1") }
             TextButton(onClick = { input += "2" }) { Text(text = "2") }
             TextButton(onClick = { input += "3" }) { Text(text = "3") }
-        }}}
+            TextButton(onClick = { input += "+" }) { Text(text = "+") }
+        }
+        Row (modifier = Modifier
+            .padding(24.dp)
+            .fillMaxWidth(),
+            horizontalArrangement = Arrangement.SpaceEvenly,
+            verticalAlignment = Alignment.CenterVertically
+        ) {
+            TextButton(onClick = { input += "0" }) { Text(text = "0") }
+            TextButton(onClick = { input += "." }) { Text(text = ".") }
+            TextButton(onClick = { }) { Text(text = "=") }
+        }
+    }}
 }
 
 
