@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 
+<!-- Contenidor principal CardView per a donar un estil visual i amb cantos arrodonits -->
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -9,11 +10,13 @@
     app:cardCornerRadius="8dp"
     app:cardElevation="4dp">
 
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="8dp">
 
+        <!-- Imatge de la ciutat apareix a l'esquerra.  -->
         <ImageView
             android:id="@+id/ivCiutat"
             android:layout_width="150dp"
@@ -23,6 +26,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
+        <!-- Títol de la ciutat: es col·loca a la dreta de la imatge  -->
         <TextView
             android:id="@+id/tvCiutat"
             android:layout_width="0dp"
@@ -37,6 +41,7 @@
             app:layout_constraintTop_toTopOf="parent"
             tools:text="Beijing" />
 
+        <!-- Província: sota el títol de la ciutat  -->
         <TextView
             android:id="@+id/tvProvincia"
             android:layout_width="0dp"
@@ -51,6 +56,7 @@
             app:layout_constraintTop_toBottomOf="@+id/tvCiutat"
             tools:text="Província" />
 
+        <!-- Habitants: es col·loca sota la província -->
         <TextView
             android:id="@+id/tvHabitants"
             android:layout_width="0dp"
