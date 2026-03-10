@@ -1,10 +1,7 @@
 package campalans.m8.cameraappjc
 
-import android.content.Context
-import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
-import android.provider.MediaStore
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.rememberLauncherForActivityResult
 import androidx.activity.compose.setContent
@@ -54,9 +51,10 @@ fun CameraScreen() {
 
     // Funció per crear el fitxer i obtenir l'URI
     fun createImageFile(): Uri {
+        val nom = "Cristian_" + java.text.SimpleDateFormat("yyyyMMdd").format(java.util.Date()) + ".png"
         val imageFile = File(
-            context.getExternalFilesDir(null),
-            "camera_photo_${System.currentTimeMillis()}.jpg"
+            context.getExternalFilesDir(android.os.Environment.DIRECTORY_PICTURES),
+            nom
         )
         return FileProvider.getUriForFile(
             context,
